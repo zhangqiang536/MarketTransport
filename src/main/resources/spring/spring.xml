@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<!-- 使用spring自带的占位符替换功能 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<!-- 允许JVM参数覆盖 -->
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<!-- 忽略没有找到的资源文件 -->
+		<property name="ignoreResourceNotFound" value="true" />
+		<!-- 配置资源文件 -->
+		<property name="locations">
+			<list>
+				<value>classpath:spring/properties/db.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean class="com.market.pc.utils.CommonsPageInfo">
+		<!-- 每个页面的独立标识id，confluence中有对其进行维护 -->
+		<property name="id">
+			<value>MT-index</value>
+		</property>
+		<!-- 页面跳转到jsp 的url -->
+		<property name="url">
+			<value>index/mtIndex</value>
+		</property>
+		<!-- 以下是Coremetrics 文档中有对该值的描述和设值，注意参数的值中如果有"<>" 一律去掉，如果值为空，在这里配置成空的双引号"" -->
+		<property name="pageId">
+			<value>MT_首页</value>
+		</property>
+		<property name="categoryId">
+			<value>MT_index</value>
+		</property>
+		<property name="searchTerm" value=""/>
+		<property name="searchResult">
+			<value></value>
+		</property>
+		<!-- 扩展属性，用-_-拼接的属性值，每个位置的值与Coremetrics 文档中 的位置一一对应 -->
+		<property name="exportAttributes" value=""/>
+	</bean>
+	
+	<!-- 扫描包 -->
+	<context:component-scan base-package="com.market.pc"/>
+</beans>

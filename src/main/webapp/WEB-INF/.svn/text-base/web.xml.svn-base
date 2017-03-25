@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+	<display-name>mybatis</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>	
+	
+	<!-- 配置session超时时间，单位分钟 -->
+	<session-config>
+		<session-timeout>1440</session-timeout>
+	</session-config>
+	<!-- insecure http methods enabled -->
+	<security-constraint>
+	     <web-resource-collection>
+	          <web-resource-name>DisableUnsecureHttpActions</web-resource-name>
+	          <url-pattern>/*</url-pattern>
+	          <http-method>DELETE</http-method>
+	          <http-method>PUT</http-method>
+	          <http-method>HEAD</http-method>
+	          <http-method>TRACE</http-method>
+	          <http-method>OPTIONS</http-method>
+	     </web-resource-collection>
+	     <auth-constraint>
+	        <role-name>NotExistingRole</role-name>
+	     </auth-constraint>
+	     <user-data-constraint>
+	        <transport-guarantee>NONE</transport-guarantee>
+	     </user-data-constraint>
+	</security-constraint>	
+	 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring.xml,classpath:spring-mybatis.xml,classpath:spring-webClient.xml,classpath:spring-quartz.xml</param-value>
+	</context-param>
+	<filter>
+		<description>字符集过滤器</description>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<description>字符集编码</description>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<description>spring监听器</description>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 防止spring内存溢出监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<!-- spring mvc servlet -->
+	<servlet>
+		<description>spring mvc servlet</description>
+		<servlet-name>springMvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<description>spring mvc 配置文件</description>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springMvc</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+    <servlet>  
+        <servlet-name>CXFService</servlet-name>  
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>CXFService</servlet-name>  
+        <url-pattern>/ws/*</url-pattern>  
+    </servlet-mapping>  
+    
+     <!-- 配置权限过滤器 -->
+  	<filter>  
+	    <filter-name>rightFilter</filter-name>  
+	    <filter-class>com.wanDa.filter.RightFilter</filter-class>  
+	    <init-param>  
+	      <param-name>checkSessionKey</param-name>  
+	      <param-value>loginName</param-value>  
+	    </init-param>  
+	    <init-param>  
+	      <param-name>noLoginToRedirectURL</param-name>  
+	      <param-value>/noLogin.jsp</param-value>  
+	    </init-param>  
+	    <init-param>  
+	      <param-name>noRightToRedirectURL</param-name>  
+	      <param-value>/noRight.jsp</param-value>  
+	    </init-param>  
+	    <init-param>  
+	      <param-name>notCheckURLList</param-name>  
+	      <param-value>/index.html,/index.jsp,/noRight.jsp,/noLogin.jsp,
+	      			   /webjsp/login.jsp,/mobilejsp/login.jsp,/manage/login.jsp,
+	      			   /webCustomer/login.do,/webCustomer/checkLogin.do,/webCustomer/register.do,      			   
+	      			   /loginMobileCustomer/login.do,/loginMobileCustomer/toSuccess.do,/loginMobileCustomer/retrievePassword.do,
+	      			   /userController/toLogin.do,/userController/login.do,/indexController/toIndex.do,/userController/exitSystem.do
+	      </param-value>  
+   	    </init-param>  
+     </filter>   
+<!--     	<filter-mapping>
+		<filter-name>rightFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>    -->
+  
+<!--     <filter-mapping>  
+    <filter-name>rightFilter</filter-name>  
+    <url-pattern>*.jsp</url-pattern>  
+  </filter-mapping>  -->    
+	<!-- Authorization setting for SSL -->
+<!--
+  	<login-config>
+		<auth-method>CLIENT-CERT</auth-method>
+		<realm-name>Client Cert Users-only Area</realm-name>
+	</login-config>  
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>SSL</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>	 
+	<filter> 
+	    <filter-name>RefererFilter</filter-name> 
+	    <filter-class>com.wanDa.filter.RefererFilter</filter-class> 
+	    <init-param> 
+	        <param-name>errorRefererToRedirectURL</param-name> 
+	        <param-value>/index.jsp</param-value> 
+	    </init-param> 
+	    <init-param> 
+	        <param-name>refererPrefix</param-name> 
+	        <param-value>10.199.203.137</param-value> 
+	    </init-param> 
+  </filter> 
+       <filter-mapping> 
+     <filter-name>RefererFilter</filter-name> 
+    <url-pattern>/*</url-pattern>    
+  </filter-mapping> 
+-->
+    <!-- SqlInjectFilter --> 
+	<filter> 
+	    <filter-name>PreventSqlInject</filter-name> 
+	    <filter-class>com.wanDa.filter.SqlInjectFilter</filter-class> 
+	    <!-- filter word, split with @ --> 
+	    <init-param> 
+	        <param-name>invalidsql</param-name> 
+<!-- 	        <param-value>select insert delete from update create destory drop alter and or like exec count chr mid master truncate char declare ; - ' % &lt; &gt;</param-value>  -->
+	        <param-value>select @insert @delete @from @update @create @destory@drop @alter @and @or @like @exec @count @chr @mid @master @truncate @char @declare@onmouseover@onabort@onblur@onchange@onclick@ondblclick@onerror@onfocus@onkeydown@onkeypress@onkeyup@onload@onmousedown@onmousemove@onmouseout@onmouseover@onmouseup@onreset@onresize@onselect@onsubmit@onunload</param-value> 
+  	    </init-param> 
+	    <!-- error page --> 
+	    <init-param> 
+	        <param-name>error</param-name> 
+	        <param-value>/noLogin.jsp</param-value> 
+	    </init-param> 
+	    <!-- debug -->     
+	    <init-param> 
+	        <param-name>debug</param-name> 
+	        <param-value>true</param-value> 
+	    </init-param> 
+  </filter> 
+        <filter-mapping> 
+     <filter-name>PreventSqlInject</filter-name> 
+    <url-pattern>/*</url-pattern>    
+  </filter-mapping> 
+	<!--@分隔XssFilter -->
+	<filter>
+		<filter-name>xssFilter</filter-name>
+		<filter-class>com.wanDa.filter.XssFilter</filter-class>
+		<init-param>
+			<param-name>SplitChar</param-name>
+			<param-value>@</param-value>
+		</init-param>
+		<init-param>
+			<param-name>FilterChar</param-name>
+<!-- 			<param-value>&gt;@&lt;@\'@\"@\\@#@(@)</param-value> -->
+			<param-value>&gt;@&lt;@'@"@\@#@(@)@%</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ReplaceChar</param-name>
+			<param-value>＞@＜@‘@“@＼@＃@（@）@％</param-value>
+		</init-param>
+	</filter>
+    	<filter-mapping>
+		<filter-name>xssFilter</filter-name>
+		<url-pattern>/*</url-pattern>  
+	</filter-mapping>      
+	
+	<!--分页过滤器  -->
+	<filter>  
+    	<filter-name>systemContextFilter</filter-name>  
+    	<filter-class>com.wanDa.filter.SystemContextFilter</filter-class>  
+ 		<init-param>
+			<param-name>pageSize</param-name>
+			<param-value>15</param-value>
+		</init-param>
+	</filter>  
+	<filter-mapping>  
+    	<filter-name>systemContextFilter</filter-name>  
+    	<url-pattern>*.do</url-pattern>  
+	</filter-mapping>		
+	<servlet> 
+        <servlet-name>ImageServlet</servlet-name> 
+        <servlet-class>net.sf.jasperreports.j2ee.servlets.ImageServlet</servlet-class> 
+    </servlet> 
+
+    <servlet-mapping> 
+        <servlet-name>ImageServlet</servlet-name> 
+        <url-pattern>/servlets/image</url-pattern> 
+    </servlet-mapping> 
+	
+    <!-- 图片裁剪 -->
+      <servlet>
+	    <description>图片上传</description>
+	    <display-name>图片上传</display-name>
+	    <servlet-name>ImgUploadServlet</servlet-name>
+	    <servlet-class>com.wanDa.servlet.ImgUploadServlet</servlet-class>
+	  </servlet>
+	  <servlet>
+	    <description>图片剪切</description>
+	    <display-name>图片剪切</display-name>
+	    <servlet-name>ImgCropServlet</servlet-name>
+	    <servlet-class>com.wanDa.servlet.ImgCropServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>ImgUploadServlet</servlet-name>
+	    <url-pattern>/imgUpload</url-pattern>
+	  </servlet-mapping>
+	  <servlet-mapping>
+	    <servlet-name>ImgCropServlet</servlet-name>
+	    <url-pattern>/imgCrop</url-pattern>
+	  </servlet-mapping>	
+	  
+	  <!-- 出错页面定义 -->  
+<!-- 	<error-page>  
+	    <exception-type>java.lang.Throwable</exception-type>  
+	    <location>/index.jsp</location>  
+	</error-page>  
+	<error-page>  
+	    <error-code>500</error-code>  
+	    <location>/index.jsp</location>  
+	</error-page>  
+	<error-page>  
+	    <error-code>404</error-code>  
+	    <location>/index.jsp</location>  
+	</error-page>   -->
+</web-app>

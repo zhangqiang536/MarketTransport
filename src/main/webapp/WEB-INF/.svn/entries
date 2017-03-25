@@ -1,0 +1,86 @@
+10
+
+dir
+7984
+svn://svn.wanda.cn/zhaoshang/canvass/src/main/webapp/WEB-INF
+svn://svn.wanda.cn/zhaoshang
+
+
+
+2015-12-16T16:55:47.838899Z
+7982
+v_xiezhailei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ee6aa82e-5b4b-4d79-8461-f66fa7f3ff2f
+
+common
+dir
+
+helpJsp
+dir
+
+lib
+dir
+
+manage
+dir
+
+mobile
+dir
+
+mobilejsp
+dir
+
+tlds
+dir
+
+web.xml
+file
+
+
+
+
+2015-12-16T02:56:06.017000Z
+11d79f0970572c5465565aca41df2577
+2015-12-16T02:24:24.144220Z
+7873
+v_mengye
+has-props
+
+
+svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+opaquelocktoken:41c80952-c8a1-4c1e-8cd9-5e1b7686c88e
+v_zhangqiang
+
+2015-12-17T07:50:26.597882Z
+
+
+9762
+
+webjsp
+dir
+

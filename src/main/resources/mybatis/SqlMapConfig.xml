@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 开启驼峰 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"></setting>
+	
+	</settings>
+	
+	<!-- 自定义别名 -->
+	<typeAliases>
+		<!-- 单个别名定义 -->
+		<!-- <typeAlias type="cn.itcast.mybatis.po.User" alias="user" /> -->
+
+		<!-- 批量定义别名 -->
+		<!-- name指定需要别名定义的po类所在的包名 ,别名就是类名（首字母大小写都可以） -->
+		<package name="com.market.pc.entity" />
+	</typeAliases>
+	
+<!-- 	<plugins> -->
+	
+	
+		<!-- 分页助手插件的使用 -->
+	<!--  <plugin interceptor="com.github.pagehelper.PageHelper">
+        <property name="dialect" value="mysql"/>
+        <property name="rowBoundsWithCount" value="true"/>
+    </plugin> -->
+    
+    
+    	<!-- 通用mapper的集成 -->
+	<!-- <plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
+		<property name="IDENTITY" value="mysql" />
+		<property name="mappers" value="com.github.abel533.mapper.Mapper" />
+	</plugin> -->
+<!-- </plugins> -->
+
+</configuration>
