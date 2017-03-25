@@ -1,10 +1,4 @@
 $(function(){
-	$(".i-text").focus(function(){
-		$(this).addClass('h-light');
-	});
-	$(".i-text").focusout(function(){
-		$(this).removeClass('h-light');
-	});
 	
 	var userLogin = {
 		fun : {
