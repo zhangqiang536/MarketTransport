@@ -5,7 +5,7 @@ $(function(){
 	$(".i-text").focusout(function(){
 		$(this).removeClass('h-light');
 	});
-	
+	alert("aa")
 	var userLogin = {
 		fun : {
 			getUrlParam : function(){  //获取url中的参数
