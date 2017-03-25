@@ -122,6 +122,7 @@ function checkNumberImage(){
 //ajax 校验验证码
 var yzm_result = "0";
 function testYZM(){
+	var yzm_input = $("#yzm").val();
 	if("" == yzm_input || null == yzm_input){
 		$("#login_errorTips").text("请填写验证码！").show();
 		return false;
