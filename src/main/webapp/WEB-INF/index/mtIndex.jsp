@@ -32,6 +32,7 @@
 <link rel="stylesheet" type="text/css" href="/css/functions/index/dermagreen.css"/>
 <link rel="stylesheet" type="text/css" href="/css/functions/index/dermaorange.css"/>
 <link rel="stylesheet" type="text/css" href="/css/functions/index/templatecss.css" />
+<link rel="stylesheet" type="text/css" href="/css/functions/index/index.css" />
 <script src="/js/commons/jquery-mt.js"></script>
 <script src="/js/functions/index/bootstrap.js"></script>
 <script src="/js/functions/index/jquery.cookie.js"></script>
@@ -194,157 +195,134 @@
     <div class="sidebar-fold"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
     <div class="subNavBox">
       <div class="sBox">
-       <div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">用户中心</span>
-        </div>
+        <div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">买买买</span></div>
         <ul class="navContent" style="display:block">
-         <li>
-            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />账号管理</div>
-            <a href="userInfo.html"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a> </li>
           <li>
-            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />消息中心</div>
-            <a href="message.html"><span class="sublist-icon glyphicon glyphicon-envelope"></span><span class="sub-title">消息中心</span></a> </li>
+            <div class="showtitle" style="width:100px;"><img src="imgs/index/leftimg.png" />商品搜索</div>
+            <a href="#"><span class="sublist-icon glyphicon"><img src="imgs/index/search.png"/></span><span class="sub-title">商品收索</span></a></li>
           <li>
-            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />短信</div>
-            <a href="smsInfo.html"><span class="sublist-icon glyphicon glyphicon-bullhorn"></span><span class="sub-title">短信</span></a></li>
-          <li class="active">
-            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />实名认证</div>
-            <a href="identify.html"><span class="sublist-icon glyphicon glyphicon-credit-card"></span><span class="sub-title">实名认证</span></a></li>
+            <div class="showtitle" style="width:100px;"><img src="imgs/index/leftimg.png" />购物车</div>
+            <a href="#"><span class="sublist-icon glyphicon"><img src="imgs/index/cart.png" /></span><span class="sub-title">购物车</span></a></li>
+          <li>
+            <div class="showtitle" style="width:100px;"><img src="imgs/index/leftimg.png" />结算</div>
+            <a href="#"><span class="sublist-icon glyphicon"><img src="imgs/index/pay.png" /></span><span class="sub-title">结算</span></a></li>
         </ul>
       </div>
       <div class="sBox">
-        <div class="subNav sublist-up"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">关于我们</span></div>
+       <div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">用户中心</span>
+        </div>
         <ul class="navContent" style="display:none">
+         <li>
+            <div class="showtitle" style="width:100px;"><img src="imgs/index/leftimg.png" />账号管理</div>
+            <a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a> </li>
           <li>
-            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />添加新闻</div>
-            <a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">添加新闻</span></a></li>
+            <div class="showtitle" style="width:100px;"><img src="imgs/index/leftimg.png" />消息中心</div>
+            <a href="#"><span class="sublist-icon glyphicon glyphicon-envelope"></span><span class="sub-title">消息中心</span></a> </li>
           <li>
-            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />添加新闻</div>
-            <a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">新闻管理</span></a></li>
-          <li>
-            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />添加新闻</div>
-            <a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">添加新闻</span></a></li>
-          <li>
-            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />新闻管理</div>
-            <a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">新闻管理</span></a></li>
+            <div class="showtitle" style="width:100px;"><img src="imgs/index/leftimg.png" />短信</div>
+            <a href="#"><span class="sublist-icon glyphicon glyphicon-bullhorn"></span><span class="sub-title">短信</span></a></li>
+          <li class="active">
+            <div class="showtitle" style="width:100px;"><img src="imgs/index/leftimg.png" />实名认证</div>
+            <a href="#"><span class="sublist-icon glyphicon glyphicon-credit-card"></span><span class="sub-title">实名认证</span></a></li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="right-product view-product right-off">
-     <div class="container-fluid">
-				<div class="info-center">
-					<div class="page-header">
-                                      <div class="pull-left">
-						<h4>实名认证</h4>      
-					</div>
-                                   </div>
-					<div class="indentify-class padding-lr">
-						<p class="margin-big-tb text-sub text-default">
-							请选择认证类型，个人认证后续可升级为企业认证，企业认证一旦认证成功，无法变更为个人认证
-						</p>
-						<ul class="class-content">
-							<li class="pull-left margin-large-35">
-							<a class="class-detail pull-right " href="#">
-							<div class="class-detail-top">
-								<div class="text-center indentify-icon">
-									<img src="img/identify_personal.png">
-								</div>
-								<h3 class="text-center">个人认证</h3>
-								<p class="margin-tb padding-bottom text-justify info">
-									用于个人或个体经营户认证，认证通过可获得短信模板自定义及认证用户特权
-								</p>
-								<ul class="class-detail-has margin-top text-lh-big">
-									<li>
-									<span class="text-black-gray">自定义短信条数</span>
-									<span class="pull-right text-gray-white">5条</span>
-									</li>
-									<li>
-									<span class="text-black-gray">云市场认证优惠</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-									<li>
-									<span class="text-black-gray">个人认证勋章</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-								</ul>
-							</div>
-							<p class="continue text-big">
-								选择并继续使用
-							</p>
-							</a>
-							</li>
-							<li class="pull-left margin-large-35">
-							<a class="class-detail pull-right " href="#">
-							<div class="class-detail-top">
-								<div class="text-center indentify-icon">
-									<img src="img/identify_enterprise.png">
-								</div>
-								<h3 class="text-center">企业认证</h3>
-								<p class="margin-tb padding-bottom text-justify info">
-									用于企事业单位认证，认证通过可获得短信模板自定义及认证用户特权
-								</p>
-								<ul class="class-detail-has margin-top text-lh-big">
-									<li>
-									<span class="text-black-gray">自定义短信条数</span>
-									<span class="pull-right text-gray-white">10条</span>
-									</li>
-									<li>
-									<span class="text-black-gray">云市场认证优惠</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-									<li>
-									<span class="text-black-gray">企业认证勋章</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-									<li>
-									<span class="text-black-gray">免费400电话(含800元话费)</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-								</ul>
-							</div>
-							<p class="continue text-big">
-								选择并继续使用
-							</p>
-							</a>
-							</li>
-							<li class="pull-left">
-							<a class="class-detail pull-right disabled" href="#">
-							<div class="class-detail-top">
-								<div class="text-center indentify-icon">
-									<img src="img/identify_developer.png">
-								</div>
-								<h3 class="text-center">服务商认证</h3>
-								<p class="margin-tb padding-bottom text-justify info">
-									服务商认证需先通过个人或企业认证，认证服务商可以入驻云市场，通过某某云市场销售获得报酬
-								</p>
-								<ul class="class-detail-has margin-top text-lh-big">
-									<li>
-									<span class="text-black-gray">服务商认证勋章</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-									<li>
-									<span class="text-black-gray">云市场插件销售</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-									<li>
-									<span class="text-black-gray">云市场模板销售</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-									<li>
-									<span class="text-black-gray">云市场模块销售</span>
-									<span class="pull-right text-gray-white">有</span>
-									</li>
-								</ul>
-							</div>
-							<p class="continue text-big">
-								即将推出
-							</p>
-							</a>
-							</li>
-						</ul>
-					</div>
-				</div>            
+  <div class="right-product view-product right-off" style="display:block">
+  		<div class="content_header">
+	  		<div class="address_select">
+			  <select class="provinces">
+			  		<option value="">--请选择省份--</option>
+			  		<option value="001">安徽省</option>
+			  </select>
+			  <select class="city">
+			  		<option value="">--请选择市--</option>
+			  		<option value="00100">芜湖市</option>
+			  </select>
+			  <select class="district">
+			  		<option value="">--请选择区(县)--</option>
+			  		<option value="0010000">弋江区</option>
+			  		<option value="0010000">芜湖县</option>
+			  		<option value="0010000">南陵县</option>
+			  		<option value="0010000">繁昌县</option>
+			  </select>
+			  <select class="pifaMarket">
+			  		<option value="">--请选择批发市场--</option>
+			  		<option value="0010000000">西河批发1</option>
+			  		<option value="0010000001">西河批发2</option>
+			  		<option value="0010000002">西河批发3</option>
+			  		<option value="0010000003">西河批发4</option>
+			  </select>
+			  <select class="pifaSaler">
+			  		<option value="">--请选择批发商--</option>
+			  		<option value="0010000000">张强</option>
+			  		<option value="0010000001">张卓</option>
+			  		<option value="0010000002">贺盛</option>
+			  		<option value="0010000003">蒋云</option>
+			  		<option value="0010000004">胡龙龙</option>
+			  		<option value="0010000005">王立民</option>
+			  </select>
+			  <select class="sort">
+			  		<option value="">--请选择种类--</option>
+			  		<option value="">蔬菜</option>
+			  		<option value="">肉类</option>
+			  		<option value="">鱼类</option>
+			  		<option value="">家禽</option>
+			  		<option value="">野味</option>
+			  		<option value="">其它</option>
+			  </select>
+			</div>
+			<div class="sort_box">
+				<div class="fr-button">
+					<div class="fr-button-a">展开</div>
+				</div>
+		        <div class="wid-list">
+		        	<%--未展开 --%>
+		        	<div class="sort_detail_box" style="display: block;">
+		        		<ul class="sort_detail">
+			        		<li class="" title="联想(Lenovo)">
+		                        <span><img src="http://k21.iblimg.com/prd/images/brand/2016/04/Lenovo.jpg" height="48"></span>
+		                        <i data-code="187730">联想(Lenovo)</i>
+		                    </li>
+		                    <li class="" title="苹果(APPLE)">
+		                        <span><img src="http://k21.iblimg.com/prd/images/brand/2016/02/Apple.jpg" height="48"></span>
+		                        <i data-code="184215">苹果(APPLE)</i>
+		                    </li>
+	                    </ul>
+	                 </div>
+	                 <%--展开 --%>
+	                 <div class="sort_detail_box_open" style="display: none;">
+	                 	<ul class="sort_detail">
+			        		<li class="" title="联想(Lenovo)">
+		                        <span><img src="http://k21.iblimg.com/prd/images/brand/2016/04/Lenovo.jpg" height="48"></span>
+		                        <i data-code="187730">联想(Lenovo)</i>
+		                    </li>
+		                    <li class="" title="苹果(APPLE)">
+		                        <span><img src="http://k21.iblimg.com/prd/images/brand/2016/02/Apple.jpg" height="48"></span>
+		                        <i data-code="184215">苹果(APPLE)</i>
+		                    </li>
+	                    </ul>
+	                    <div class="clr"></div>
+	                    <div class="choice" style="display: none;">
+	                    	<div class="choice-left">已选品牌:</div>
+	                    	<div class="choice-show"></div>
+	                    	<div class="clr"></div>
+	                    </div>
+	                   	<div class="showbutton" style="display: block;">
+	                		<button type="button" class="btn w48 sbutton btn-secondary">确定</button>
+	                		<button type="button" class="btn btn-submit btn-submitclick w48">取消</button>
+	                   	</div>
+	                  </div>
+	                  <div class="clr"></div>
+				</div>
+				<div class="clr"></div>
+			</div>
 		</div>
+		<div class="line_middle"></div>
+		<div class="content_body">
+		
+		</div>
+  </div>
   </div>
 </div>
 <script type="text/javascript">
