@@ -33,9 +33,12 @@
 <link rel="stylesheet" type="text/css" href="/css/functions/index/dermaorange.css"/>
 <link rel="stylesheet" type="text/css" href="/css/functions/index/templatecss.css" />
 <link rel="stylesheet" type="text/css" href="/css/functions/index/index.css" />
+<link rel="stylesheet" type="text/css" href="/css/commons/pageGroup.css" />
 <script src="/js/commons/jquery-mt.js"></script>
+<script src="/js/commons/pageGroup.js"></script>
 <script src="/js/functions/index/bootstrap.js"></script>
 <script src="/js/functions/index/jquery.cookie.js"></script>
+<script src="/js/functions/index/search.js"></script>
 </head>
 <body>
 	<nav class="nav navbar-default navbar-mystyle navbar-fixed-top">
@@ -273,56 +276,221 @@
 			  </select>
 			</div>
 			<div class="sort_box">
-				<div class="fr-button">
-					<div class="fr-button-a">展开</div>
+			
+			<%--数量大于6才展示 --%>
+			<div class="fr-button" onclick="close_open();">
+	    		<div class="fr-button-a">展开 +</div>
+	        </div>
+	        <div class="sx-show"  style="display: block;" id="sx-show-close">
+				<div class="sort_detail">
+					<ul class="list-class">
+		        		<li class="on" title="蔬菜">
+		                    <span><img src="/imgs/goodsPics/12.jpg" height="48"></span>
+		              				<i data-code="184215">蔬菜</i>
+		              				</li>
+		          		<li class="" title="南瓜">
+		                    <span><img src="/imgs/goodsPics/2.jpg" height="48"></span>
+		              				<i data-code="186028">南瓜</i>
+		              				</li>
+		          		<li class="" title="黄瓜">
+		                    <span><img src="/imgs/goodsPics/1.jpg" height="48"></span>
+		              				<i data-code="187381">黄瓜</i>
+		              				</li>
+		          		<li class="" title="花菜">
+		                    <span><img src="/imgs/goodsPics/6.jpg" height="48"></span>
+		              				<i data-code="175269">花菜</i>
+		              				</li>
+		          		<li class="" title="白菜">
+		                    <span><img src="/imgs/goodsPics/11.jpg" height="48"></span>
+		              				<i data-code="187862">白菜</i>
+		              				</li>
+		                  		<li class="" title="萝卜">
+			                            <span><img src="/imgs/goodsPics/9.jpg" height="48"></span>
+		                          				<i data-code="186739">萝卜</i>
+		                          				</li>
+	                          		<li class="" title="土豆">
+			                            <span><img src="/imgs/goodsPics/8.jpg" height="48"></span>
+		                          				<i data-code="175093">土豆</i>
+		                          				</li>
+	                          		<li class="" title="茄子">
+			                            <span><img src="/imgs/goodsPics/3.jpg" height="48"></span>
+		                          				<i data-code="181993">茄子</i>
+		                          				</li>
+	                          		<li class="" title="康师傅(Master Kong)">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/01/0127142338.jpg" height="48"></span>
+		                          				<i data-code="183917">康师傅(Master Kong)</i>
+		                          				</li>
+	                          		<li class="" title="和之礼">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/06/hezhi.jpg" height="48"></span>
+		                          				<i data-code="192977">和之礼</i>
+		                          				</li>
+	                          		<li class="" title="茱蒂丝(Julie's)">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/03/zhudisi.jpg" height="48"></span>
+		                          				<i data-code="174866">茱蒂丝(Julie's)</i>
+		                          				</li>
+	                          		<li class="" title="三立">
+			                            <span>三立</span>
+	                          					<i data-code="187346">三立</i>
+	                          				</li>
+			        </ul>
 				</div>
-		        <div class="wid-list">
-		        	<%--未展开 --%>
-		        	<div class="sort_detail_box" style="display: block;">
-		        		<ul class="sort_detail">
-			        		<li class="" title="联想(Lenovo)">
-		                        <span><img src="http://k21.iblimg.com/prd/images/brand/2016/04/Lenovo.jpg" height="48"></span>
-		                        <i data-code="187730">联想(Lenovo)</i>
-		                    </li>
-		                    <li class="" title="苹果(APPLE)">
-		                        <span><img src="http://k21.iblimg.com/prd/images/brand/2016/02/Apple.jpg" height="48"></span>
-		                        <i data-code="184215">苹果(APPLE)</i>
-		                    </li>
-	                    </ul>
-	                 </div>
-	                 <%--展开 --%>
-	                 <div class="sort_detail_box_open" style="display: none;">
-	                 	<ul class="sort_detail">
-			        		<li class="" title="联想(Lenovo)">
-		                        <span><img src="http://k21.iblimg.com/prd/images/brand/2016/04/Lenovo.jpg" height="48"></span>
-		                        <i data-code="187730">联想(Lenovo)</i>
-		                    </li>
-		                    <li class="" title="苹果(APPLE)">
-		                        <span><img src="http://k21.iblimg.com/prd/images/brand/2016/02/Apple.jpg" height="48"></span>
-		                        <i data-code="184215">苹果(APPLE)</i>
-		                    </li>
-	                    </ul>
-	                    <div class="clr"></div>
-	                    <div class="choice" style="display: none;">
-	                    	<div class="choice-left">已选品牌:</div>
-	                    	<div class="choice-show"></div>
-	                    	<div class="clr"></div>
-	                    </div>
-	                   	<div class="showbutton" style="display: block;">
-	                		<button type="button" class="btn w48 sbutton btn-secondary">确定</button>
-	                		<button type="button" class="btn btn-submit btn-submitclick w48">取消</button>
-	                   	</div>
-	                  </div>
-	                  <div class="clr"></div>
-				</div>
-				<div class="clr"></div>
 			</div>
+			<div class="sx-show" style="display: none;" id="sx-show-open">
+				<div class="sort_detail" >
+					<ul class="list-class1">
+		        		<li class="on" title="苹果(APPLE)">
+		                    <span><img src="http://k21.iblimg.com/prd/images/brand/2016/02/Apple.jpg" height="48"></span>
+		              				<i data-code="184215">苹果(APPLE)</i>
+		              				</li>
+		          		<li class="" title="华为(HUAWEI)">
+		                    <span><img src="http://k21.iblimg.com/prd/images/brand/2016/01/HUAWEI.jpg" height="48"></span>
+		              				<i data-code="186028">华为(HUAWEI)</i>
+		              				</li>
+		          		<li class="" title="三星(SAMSUNG)">
+		                    <span><img src="http://k21.iblimg.com/prd/images/brand/2016/04/SAMSUNG.jpg" height="48"></span>
+		              				<i data-code="187381">三星(SAMSUNG)</i>
+		              				</li>
+		          		<li class="" title="小米(Mi)">
+		                    <span><img src="http://k21.iblimg.com/prd/images/brand/2016/01/MI.jpg" height="48"></span>
+		              				<i data-code="175269">小米(Mi)</i>
+		              				</li>
+		          		<li class="" title="海尔(Haier)">
+		                    <span><img src="http://k21.iblimg.com/prd/images/brand/2016/02/haier.jpg" height="48"></span>
+		              				<i data-code="187862">海尔(Haier)</i>
+		              				</li>
+		                <li class="" title="海尔(Haier)">
+		                    <span><img src="http://k21.iblimg.com/prd/images/brand/2016/02/haier.jpg" height="48"></span>
+		              				<i data-code="187862">海尔(Haier)</i>
+		              				</li>
+		                  		<li class="" title="格力高(Glico)">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/01/geligao.jpg" height="48"></span>
+		                          				<i data-code="186739">格力高(Glico)</i>
+		                          				</li>
+	                          		<li class="" title="奥利奥(OREO)">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/02/oreo.jpg" height="48"></span>
+		                          				<i data-code="175093">奥利奥(OREO)</i>
+		                          				</li>
+	                          		<li class="" title="马奇新新(Munchy's)">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/07/maqixinxin.jpg" height="48"></span>
+		                          				<i data-code="181993">马奇新新(Munchy's)</i>
+		                          				</li>
+	                          		<li class="" title="康师傅(Master Kong)">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/01/0127142338.jpg" height="48"></span>
+		                          				<i data-code="183917">康师傅(Master Kong)</i>
+		                          				</li>
+	                          		<li class="" title="和之礼">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/06/hezhi.jpg" height="48"></span>
+		                          				<i data-code="192977">和之礼</i>
+		                          				</li>
+	                          		<li class="" title="茱蒂丝(Julie's)">
+			                            <span><img src="http://k21.iblimg.com/prd/images/brand/2016/03/zhudisi.jpg" height="48"></span>
+		                          				<i data-code="174866">茱蒂丝(Julie's)</i>
+		                          				</li>
+	                          		<li class="" title="三立">
+			                            <span>三立</span>
+	                          					<i data-code="187346">三立</i>
+	                          				</li>
+			        </ul>
+				</div>
+			</div>	
+		</div>
+		</div>
+		<div class="search_right">
+			<img alt="" src="/imgs/goodsPics/12.jpg">
 		</div>
 		<div class="line_middle"></div>
 		<div class="content_body">
-		
-		</div>
-  </div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/1.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/2.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>单价：1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/3.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/4.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/5.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/6.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/7.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/8.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/9.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+			<div class="goods">
+				<img alt="" src="imgs/goodsPics/10.jpg">
+				<div class="content_plain">
+					<span>张老板</span>
+					<span>1kg</span>
+				</div>
+				<div class="wantToBuy">我要买</div>
+			</div>
+  		</div>
+  		<!--分页-->
+	    <div id="pageGro">
+	        <div class="pageUp" style="display: none;">《 上一页</div>
+	        <div class="pageList">
+	            <ul><li class="on">1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>
+	        </div>
+	        <div class="pageDown" style="display: block;">下一页 》</div>
+	    </div>
+	    
+	    <div class="pageEnd">我是尾部</div>
   </div>
 </div>
 <script type="text/javascript">
@@ -392,6 +560,69 @@ $(".left-main .sidebar-fold").click(function(){
 			{$(this).find("div").show();}
 			}).mouseleave(function(){$(this).find("div").hide();})	
 })
+
+
+//分页
+	//页面加载完成是与后台数据交互，后台返回总页数（如果只有总条数的话就自己算。Math.ceil(总条数/每条多少页)=总页数）
+			var pageCount = 11;//后台返回的总页数
+			icon_load(pageCount);
+	    	//点击分页按钮触发
+			$(document).on("click","#pageGro li",function(){
+				var pageNum = parseInt($(this).html());//获取当前页数
+				var selector = $(this);
+				
+				//这里写ajax数据交互,json.html为后台，返回了总页数。实际开发中请删除json.html文件，
+				//$.post('json.html',{},function(rs){
+					//判断请求是否成功，后台一般会给一个标识。
+					//if(true){
+						
+						//成功后生成分页按钮
+						num_click(pageCount,pageNum,selector);
+						
+					//}else{
+						//alert('这里就表示获取后台的数据失败了');
+					//}
+				//},'json');
+			});
+			
+			//点击上一页触发
+			$(document).on("click","#pageGro .pageUp",function(){
+				var pageNum = parseInt($("#pageGro li.on").html());//获取当前页
+				var index = $("#pageGro ul li.on").index();//获取index
+				
+				//这里写ajax数据交互,json.html为后台，返回了总页数。实际开发中请删除json.html文件，
+				//$.post('json.html',{},function(rs){
+					//判断请求是否成功，后台一般会给一个标识。
+					//if(true){
+						
+						//成功后生成分页按钮
+						pageUp_click(pageCount,pageNum,index);
+						
+					//}else{
+						//alert('这里就表示获取后台的数据失败了');
+					//}
+				//},'json');
+			});
+			
+			//点击下一页触发
+			$(document).on("click","#pageGro .pageDown",function(){
+				var pageNum = parseInt($("#pageGro li.on").html());//获取当前页
+				var index = $("#pageGro ul li.on").index();//获取index
+				
+				//这里写ajax数据交互,json.html为后台，返回了总页数。实际开发中请删除json.html文件，
+				//$.post('json.html',{},function(rs){
+					//判断请求是否成功，后台一般会给一个标识。
+					//if(true){
+						
+						//成功后生成分页按钮
+						pageDown_click(pageCount,pageNum,index);
+						
+					//}else{
+						//alert('这里就表示获取后台的数据失败了');
+					//}
+				//},'json');
+				
+			});
 </script>
 </body>
 </html>

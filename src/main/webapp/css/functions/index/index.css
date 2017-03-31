@@ -1,55 +1,83 @@
 .content_header{
-	margin-left: 50px;
-	margin-top: 50px;
+	margin: 20px 50px 10px 50px;
+	height: 180px;
+	width: 900px;
+	float: left;
+}
+
+.search_right{
+	height: 210px;
+	width: 270px;
+	float: right;
+	padding: 16px;
+}
+
+.search_right img{
+	width:200px;
+	height: 180px;
+}
+
+.address_select{
+	padding-top: 10px;
+	width:100%;
+	margin-bottom: 6px;
+}
+
+.address_select select{
+	float: left;
+	margin: 5px;
+	background-color: #009cff;
 }
 
 .line_middle{
 	width:100%;
 	height:1px;
-	margin:60px auto;
-	padding:0px;
 	background-color:#D5D5D5;
 	overflow:hidden;
 }
 
-.sort_box{
-	margin-top:10px;
-	margin-bottom:10px;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
-	background: #EFE8E1;
+.sort_box {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+    width: 900px;
+    float: left;
+    background: #FFF;
+    padding: 6px 20px 6px 20px ;
+    line-height: 22px;
+    min-height: 22px;
+    color: #333;
 }
 
-.wid-list{
+
+.sx-show {
+    max-height: 116px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sort_detail{
+	position: relative;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	margin-left: 0px;
 	width: 90%;
-	margin-top: 10px;
 }
 
 .fr-button{
-	float:right;
-	width:10%;
-	padding-left: 10px;
-	cursor: pointer;
-}
-
-.fr-button .fr-button-a{
-	background: url("/imgs/index/openclose.png");
-	background-repeat: no-repeat;
-	background-position: right 9px;
+	float: right;
+	position: relative;
+	margin-right: 0px;
+	width: 10%;
 	text-align: center;
+	cursor: pointer;
+	background-color: #eee;
 }
 
-.sort_detail li:hover {
-    background: #fef9ee;
-    height: 46px;
-    border: 2px solid #d5af82;
-    width: 106px;
-    line-height: 46px;
+.fr-button .fr-button-a:hover{
+	background-color: #F5E7E7;
 }
-
-.sort_detail li {
-	padding-left:0px;
-/*     float: left; */
+.list-class li {
+    float: left;
     position: relative;
     width: 108px;
     height: 48px;
@@ -64,3 +92,299 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.list-class li span {
+    display: inline;
+    text-align: center
+}
+
+.list-class li span img {
+    height: 48px
+}
+
+.list-class li i {
+    display: none
+}
+
+.list-class li i img {
+    width: 96px;
+    height: 48px
+}
+
+@-moz-document url-prefix() {
+    .list-class li span {
+        float: left;
+        width: 100%
+    }
+}
+
+.list-class li.on {
+    background: #fff url(//img.iblimg.com/respc-1/resources/v4.0/css/i/cha-3.png) no-repeat right bottom;
+    height: 46px;
+    border: 2px solid #d5af82;
+    width: 106px;
+    line-height: 46px;
+    color: #999
+}
+
+.list-class li.on i {
+    display: inline;
+    color: #999;
+    white-space: nowrap
+}
+
+.list-class li.on span {
+    display: none
+}
+
+.list-class li.on:hover {
+    background: #fef9ee url(//img.iblimg.com/respc-1/resources/v4.0/css/i/cha-3.png) no-repeat right bottom;
+    height: 46px;
+    border: 2px solid #d5af82;
+    width: 106px;
+    line-height: 46px;
+    color: #987144
+}
+
+.list-class li:hover {
+    background: #fef9ee;
+    height: 46px;
+    border: 2px solid #d5af82;
+    width: 106px;
+    line-height: 46px
+}
+
+.list-class li:hover span {
+    display: none
+}
+
+.list-class li:hover i {
+    display: inline;
+    color: #987144;
+    white-space: nowrap
+}
+
+.listclass li {
+    float: left;
+    margin-left: -1px;
+    position: relative
+}
+
+.listclass li a span {
+    float: left;
+    display: inline-block
+}
+
+.listclass li a i {
+    float: left;
+    margin-left: 7px;
+    display: inline-block;
+    width: 7px;
+    height: 34px;
+    background-repeat: no-repeat
+}
+
+.listclass li a:link,.listclass li a:visited {
+    border: 1px solid #ccc;
+    display: block;
+    padding: 0 15px;
+    height: 34px;
+    line-height: 34px;
+    background: #f8f8f8
+}
+
+.listclass li a:hover {
+    background: #f8f8f8;
+    border: 1px solid #df3d36;
+    color: #e6133c;
+    position: relative;
+    z-index: 2
+}
+
+.listclass li a.disable {
+    border: 1px solid #ccc;
+    color: #bbb;
+    cursor: not-allowed
+}
+
+.listclass li a.disable:hover {
+    border: 1px solid #ccc;
+    color: #bbb
+}
+
+.listclass li:hover i {
+    background-position: -7px center
+}
+
+.listclass li.on {
+    z-index: 3
+}
+
+.listclass li.upanddown i {
+    background-image: url(//img.iblimg.com/respc-1/resources/v4.0/css/i/icon-xiala.png);
+    background-position: 0 center
+}
+
+.listclass li.upanddown a.disable i {
+    background-image: url(//img.iblimg.com/respc-1/resources/v4.0/css/i/list-new-arrow.png);
+    background-position: -7px center
+}
+
+.listclass li.sort i {
+    background-image: url(//img.iblimg.com/respc-1/resources/v4.0/css/i/icon-xiala1.png);
+    background-position: 0 center
+}
+
+.listclass li.on a:link,.listclass li.on a:visited {
+    background: #c01133;
+    border: 1px solid #c01133;
+    color: #FFF
+}
+
+.listclass li.on i {
+    background-position: -14px center
+}
+
+.listclass li.down i {
+    background-position: -21px center
+}
+li.on {
+    background: #fff url(//img.iblimg.com/respc-1/resources/v4.0/css/i/cha-1.png) no-repeat right bottom;
+    height: 46px;
+    border: 2px solid #ddd;
+    width: 106px;
+    line-height: 46px;
+    color: #999;
+}
+
+.list-class1 li {
+	float:left;
+	position:relative;
+	width:108px;
+	height:48px;
+	border:1px solid #eee;
+	overflow:hidden;
+	text-align:center;
+	line-height:48px;
+	color:#999;
+	margin:0 4px 8px 0;
+	*margin-right:3px;
+	display:inline-block;
+	cursor:pointer
+}
+.list-class1 li span {
+	display:inline-block;
+	text-align:center;
+	max-width:96px
+}
+.list-class1 li i {
+	display:none
+}
+.list-class1 li i img {
+	width:96px;
+	height:48px
+}
+.list-class1 li.on {
+	background:#fef9ee url(//img.iblimg.com/respc-1/resources/v4.0/css/i/cha-3.png) no-repeat right bottom;
+	height:46px;
+	border:2px solid #d5af82;
+	width:106px;
+	line-height:46px;
+	color:#987144
+}
+.list-class1 li.on i {
+	display:inline-block;
+	color:#987144;
+	white-space:nowrap
+}
+.list-class1 li.on span {
+	display:none
+}
+.list-class1 li.on:hover {
+	background:#fef9ee url(//img.iblimg.com/respc-1/resources/v4.0/css/i/cha-3.png) no-repeat right bottom
+}
+.list-class1 li:hover {
+	background:#fef9ee;
+	height:46px;
+	border:2px solid #d5af82;
+	width:106px;
+	line-height:46px
+}
+.list-class1 li:hover span {
+	display:none
+}
+.list-class1 li:hover i {
+	display:inline-block;
+	color:#987144;
+	white-space:nowrap
+}
+
+.list-class1{
+	overflow:auto;
+	max-height:106px;
+	position:relative
+}
+
+.list-class{
+	overflow:hidden;
+	max-height:106px;
+}
+
+*{margin: 0px;padding: 0px}
+
+.content_body{
+	position: relative;
+	margin: 10px 10px 10px 40px;
+	padding-top:10px; 
+	max-height:1100px;
+}
+
+.goods{
+	position:relative;
+	float:left;
+	width:150px;
+	height:220px;
+	background: #efdada;
+	padding: 10px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.goods:hover{
+	border:1px solid red;  
+}
+
+.goods img{
+	width:131px;
+	height:100px;
+}
+
+.goods .content_plain{
+	width:131px;
+	height:40px;
+}
+
+.goods .content_plain span{
+	float:left;
+	width:131px;
+	text-align: left;  
+}
+
+.goods .wantToBuy{
+	background-color: #f21a1a;
+	text-align: center;
+	line-height:28px;
+	width:96px;
+	height: 30px;
+	cursor: pointer;
+	margin: 10px auto;
+}
+
+.pageEnd{
+	position:relative;
+	height: 100px;
+	background-color: #a7c2bc;
+	margin-top: 50px;
+	text-align: center;
+}
+
