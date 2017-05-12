@@ -17,6 +17,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:spring/properties/db.properties</value>
+				<value>classpath:spring/properties/solr.properties</value>
 			</list>
 		</property>
 	</bean>

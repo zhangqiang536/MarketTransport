@@ -34,5 +34,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/iokblCommons-3.0.jar" sourcepath="src/main/webapp/WEB-INF/lib/iokblCommons-3.0.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mapper-2.3.4.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/pagehelper-3.7.5.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/persistence-api-1.0.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jsqlparser-0.9.1.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/solr-solrj-4.10.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

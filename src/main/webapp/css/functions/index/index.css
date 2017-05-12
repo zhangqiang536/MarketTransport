@@ -380,11 +380,16 @@ li.on {
 	margin: 10px auto;
 }
 
-.pageEnd{
-	position:relative;
-	height: 100px;
-	background-color: #a7c2bc;
-	margin-top: 50px;
-	text-align: center;
+
+.buyTetailAlert{
+	background: black;
+	width: 200px;
+	height: 200px;	
 }
 
+
+.m-sidebar{position: fixed;top: 0;right: 0;background: #000;z-index: 2000;width: 35px;height: 100%;font-size: 12px;color: #fff;}
+.cart{color: #fff;text-align:center;line-height: 20px;padding: 200px 0 0 0px;}
+.cart span{display:block;width:20px;margin:0 auto;}
+.cart i{width:35px;height:35px;display:block; background:url(car.png) no-repeat;}
+#msg{position:fixed; top:300px; right:35px; z-index:10000; width:1px; height:52px; line-height:52px; font-size:20px; text-align:center; color:#fff; background:#360; display:none}

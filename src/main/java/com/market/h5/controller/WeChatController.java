@@ -1,4 +1,4 @@
-/*package com.market.h5.controller;
+package com.market.h5.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,9 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONObject;
+
+
+
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -25,22 +27,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.apache.log4j.Logger;
 
 import com.alibaba.fastjson.JSON;
-import com.wanDa.common.ConfigProperties;
-import com.wanDa.util.CheckUtils;
+import com.alibaba.fastjson.JSONObject;
+import com.market.pc.utils.CheckUtils;
+import com.market.pc.utils.ConfigProperties;
 
 @Controller
 @RequestMapping(value="/weChat")
 public class WeChatController {
-	*//**
-	 * 验证token
-	 *//*
 	@RequestMapping(value="/token")
 	public  void getToken(HttpServletRequest req,HttpServletResponse resp){
 		String signature = req.getParameter("signature");
 		String timestamp = req.getParameter("timestamp");
 		String nonce = req.getParameter("nonce");
 		String echostr = req.getParameter("echostr");
-		String token = "wanda";
+		String token = "zq_mt";
 		PrintWriter out = null;
 		try {
 			out = resp.getWriter();
@@ -52,13 +52,6 @@ public class WeChatController {
 		}
 	}
 	
-	*//**
-	 * httpPost 请求方式
-	 * @param url         url地址
-     * @param jsonParam     参数
-     * @param noNeedResponse    不需要返回结果
-	 * @return
-	 *//*
 	public static String httpPost(String url,String code){
 		String urls = "http://10.199.18.132:8080/transmits/transmit/transmit.do?url="+url;
 		//创建一个httpClient实例
@@ -77,15 +70,10 @@ public class WeChatController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		JSONObject json = JSONObject.fromObject(result);
+		JSONObject json = JSONObject.parseObject(result);
 		String openid = (String) json.get("openid");
 		return openid;
 	}
-	*//**
-	 * 根据code获取用户的openid
-	 * @param code
-	 * @return
-	 *//*
 	public static String openid(String code){
 		String url = ConfigProperties.getValue("url")
 				+ "appid="+ConfigProperties.getValue("appid")
@@ -95,4 +83,3 @@ public class WeChatController {
 		return WeChatController.httpPost(url,code);
 	}
 }
-*/

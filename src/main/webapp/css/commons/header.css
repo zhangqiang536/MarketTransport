@@ -1,0 +1,78 @@
+*{margin: 0px;padding: 0px}
+.top{
+	background-color: yellow;
+	width:100%;
+	height: 50px;
+	text-align: center;
+	position: fixed;
+	top: 0px;
+	z-index: 101;
+}
+
+.top h3{
+	float:left;
+	padding-top: 10px;
+	padding-left: 18px;
+}
+
+.top .userInfo{
+	float: left;
+	width: 100px;
+	margin-left: 503px;
+	margin-top: 18px;
+	cursor: pointer;
+}
+
+.top .userInfo span{
+	width:90px;
+}
+
+.top .aboutMe{
+	float: left;
+	margin-left: 40px;
+	margin-top: 1px;
+	cursor: pointer;
+}
+.top .exitSys{
+	float: left;
+	margin-left: 40px;
+	margin-top: 18px;
+	cursor: pointer;
+}
+
+.top .cart_header{
+	float: left;
+	margin-left: 40px;
+	margin-top: 18px;
+	cursor: pointer;
+}
+
+.search{
+	float:left;
+	margin-left:40px;
+	margin-top:10px;
+	text-align: left;
+	display: inline-block;
+	display: inline;
+	zoom: 1;
+}
+
+.search input{
+	height: 26px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	padding-right: 38px;
+	outline: 0;
+	padding-left: 0;
+	
+	width:100px; height:30px; text-indent:2em; float:left; box-shadow:none
+}
+.search .search_button {
+	border: 0;
+	width: 17px;
+	height: 30px;
+	background: url(../../../imgs/index/go.png) 0 50% no-repeat;
+	float: left;
+	margin-left: -30px;
+}

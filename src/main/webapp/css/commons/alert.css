@@ -1,0 +1,115 @@
+#main {
+height:1800px;
+padding-top:90px;
+text-align:center;
+}
+#fullbg {
+/* background-color:gray;
+left:0;
+opacity:0.5;
+position:absolute;
+top:0;
+z-index:998;
+filter:alpha(opacity=50);
+-moz-opacity:0.5;
+-khtml-opacity:0.5;
+width:100%;
+height:100%; */
+	position:fixed;
+	_position:absolute;
+	height:100%;
+	_height:expression(document.body.offsetHeight+"px");
+	z-index:998;
+	left:0;
+	top:0;
+	width:100%;
+	background:#000;
+	opacity:.5;
+	display:none;
+}
+#dialog {
+background-color:#E5F1E9;
+border:5px solid rgba(0,0,0, 0.4);
+height:400px;
+left:50%;
+margin:-200px 0 0 -200px;
+padding:1px;
+position:fixed !important; /* 浮动对话框 */
+position:absolute;
+top:50%;
+width:400px;
+z-index:999;
+border-radius:5px;
+display:none;
+}
+#dialog p {
+margin:0 0 12px;
+height:24px;
+line-height:24px;
+background:#CCCCCC;
+}
+#dialog p.close {
+text-align:right;
+padding-right:10px;
+}
+#dialog p.close a {
+color:#fff;
+text-decoration:none;
+} 
+
+.dialog_content img{
+	width: 196px;
+    height: 190px;
+}
+
+.dialog_content .provider{
+	width: 172px;
+	height: 26px;
+	margin: 0px 10px 0px 113px;
+    line-height: 27px;
+    text-align: left;
+}
+
+.dialog_content .goodsName{
+	width: 172px;
+	height: 26px;
+	margin: -5px 10px 0px 113px;
+    line-height: 27px;
+    text-align: left;
+}
+
+.dialog_content .weight{
+	width: 215px;
+	height: 26px;
+	line-height: 27px;
+	text-align: left;
+	margin: -5px 10px 0px 113px;
+}
+
+.dialog_content .weight input{
+	width: 50px;
+	height: 20px;
+	line-height: 26px;
+	text-align: center;
+	background-color: #E6DBDB;
+	margin-left: 11px;
+}
+
+.dialog_content .weight .totalWeight{
+    margin-left: 15px;
+    float: right;
+}
+
+.dialog_content .button{
+	border: 1px solid;
+	background-color: #03E0D6;
+	width: 125px;
+    height: 36px;
+    text-align: center;
+    line-height: 34px;
+    margin-left: 120px;
+    margin-top: 28px;
+    cursor: pointer;
+    font-family: "Microsoft Yahei";
+    font-size: x-large;
+}

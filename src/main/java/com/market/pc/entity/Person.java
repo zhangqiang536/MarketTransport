@@ -1,6 +1,16 @@
 package com.market.pc.entity;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name="user")
 public class Person {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)//自增字段
+	private Long id;
 	
 	/**
 	 * 姓名：name
@@ -41,6 +51,19 @@ public class Person {
 	 * 验证码：yzm
 	 */
 	private String yzm;
+
+	/**
+	 * token:token
+	 */
+	private String token;
+	
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 	public String getName() {
 		return name;
@@ -104,6 +127,14 @@ public class Person {
 
 	public void setYzm(String yzm) {
 		this.yzm = yzm;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	

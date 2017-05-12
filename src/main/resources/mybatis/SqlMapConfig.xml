@@ -19,21 +19,24 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<package name="com.market.pc.entity" />
 	</typeAliases>
 	
-<!-- 	<plugins> -->
+	<plugins>
 	
 	
-		<!-- 分页助手插件的使用 -->
-	<!--  <plugin interceptor="com.github.pagehelper.PageHelper">
+	<!--  分页助手插件的使用-->
+	 <plugin interceptor="com.github.pagehelper.PageHelper">
         <property name="dialect" value="mysql"/>
         <property name="rowBoundsWithCount" value="true"/>
-    </plugin> -->
+    </plugin>
     
     
-    	<!-- 通用mapper的集成 -->
-	<!-- <plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
+    <!--通用mapper的集成  -->	
+	<plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
 		<property name="IDENTITY" value="mysql" />
 		<property name="mappers" value="com.github.abel533.mapper.Mapper" />
-	</plugin> -->
-<!-- </plugins> -->
+	</plugin>
+</plugins>
+<mappers>
+	<mapper resource="mybatis/mappers/userMapper.xml"/>
+</mappers>
 
 </configuration>

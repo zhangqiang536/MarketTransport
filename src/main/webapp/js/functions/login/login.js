@@ -182,10 +182,49 @@ function toIndex(){
 		person.yzm = yzm_input;
 	}
 	var data = $.toJSON(person);
-	$("body").append('<form id="loginForm" action="" method="post"><input id="userInfo" name="userInfo" type="hidden"></form>');
-	$("#userInfo").val(data); 
-	$("#loginForm").attr("action", domain.main+"/toIndex.html"); 
-	$("#loginForm").submit();
+	//以。html结尾的请求不能返回json格式的数据
+	/*$.ajax({
+		type:"post",
+		url:"/toCheckLogin.do",
+		data:person,
+		success:function(result){
+			if(result.resultCode == "0000"){
+				$("body").append('<form id="loginForm" action="" method="post"><input id="userInfo" name="userInfo" type="hidden"></form>');
+				$("#userInfo").val(data); 
+				$("#loginForm").attr("action", domain.main+"/toIndex.html"); 
+				$("#loginForm").submit();
+			}else{
+				alert(result.resultMsg);
+			}
+		},
+		error:function(result){
+			alert(result.resultMsg);
+		},
+	});*/
+	
+	$.ajax({
+		type:"post",
+		url:"/toCheckLogin.do",
+		data:data,
+		contentType: "application/json",
+		success:function(result){
+			if(result.resultCode == "0000"){
+				$("body").append('<form id="loginForm" action="" method="post"><input id="userInfo" name="userInfo" type="hidden"></form>');
+				$("#userInfo").val(data); 
+				$("#loginForm").attr("action", domain.main+"/toIndex.html"); 
+				$("#loginForm").submit();
+			}else{
+				alert(result.resultMsg);
+			}
+		},
+		error:function(result){
+			alert(result.resultMsg);
+		},
+	});
+//	$("body").append('<form id="loginForm" action="" method="post"><input id="userInfo" name="userInfo" type="hidden"></form>');
+//	$("#userInfo").val(data); 
+//	$("#loginForm").attr("action", domain.main+"/toIndex.html"); 
+//	$("#loginForm").submit();
 }
 
 
