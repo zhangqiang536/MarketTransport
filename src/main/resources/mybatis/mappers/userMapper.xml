@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.market.pc.mapper.UserMapper">
 	<select id="queryUserInfo" resultType="com.market.pc.entity.Person">
 		select * from user where loginName=#{loginName} and password=#{password}
-	</select>
+	</select> 
 	
 
 </mapper>
